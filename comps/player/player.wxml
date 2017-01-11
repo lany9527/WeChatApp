@@ -1,0 +1,27 @@
+<!-- 人物选择 -->
+<template name="player-input">
+  <view wx:if="{{target.playerShow==false}}">
+    <view class="player-head"></view>
+    <text class="player-number">{{target.player[target.playerIdx].num}}号玩家</text>
+    <input class="player-input" placeholder="输入昵称（选填）" bindinput="playerInputBindNick" maxlength="8"  />
+    <button class="player-btn player-btn-c" bindtap="playerInputBindTapView">点击查看身份</button>
+  </view>
+  <view wx:if="{{target.playerShow==true}}">
+    <view class="player-card">
+      <view class="player-id">
+        <text>{{target.player[target.playerIdx].text}}</text>
+      </view>
+      <image src="../../image/head_01.png" class="player-head-s"/>
+      <view class="player-name">
+        <text>{{target.playerIdx + 1}}号玩家</text>
+        <text class="player-nick">{{target.player[target.playerIdx].nick}}</text>
+      </view>
+    </view>
+    <view wx:if="{{target.playerIdx < target.player.length - 1}}">
+      <button class="player-btn" bindtap="playerInputBindTapNext">传给下一个玩家</button>
+    </view>
+    <view wx:else>
+      <button class="player-btn player-btn-c" bindtap="playerInputBindTapNext">交给法官</button>
+    </view>
+  </view>
+</template>

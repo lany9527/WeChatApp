@@ -1,0 +1,61 @@
+.player-head{
+  width: 100%;
+  height: 280px;
+  background: #eee;
+}
+.player-head-s{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+.player-number{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  text-align: center;
+  display: block;
+  color: #fff;
+}
+.player-name{
+  display: inline-block;
+  vertical-align: top;
+}
+.player-nick{
+  display: block;
+  margin-top: 2px;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.player-input{
+  border: 1px solid #eee;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+.player-btn{
+  border-radius: 0;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+.player-btn-c{
+  background: #fcc800;
+}
+.player-btn::after{
+  border-radius: 0;
+  border-width: 2px;
+}
+.player-id{
+  background: #555;
+  display: block;
+  font-size: 2em;
+  padding: 20px 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.player-card{
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 20px;
+}

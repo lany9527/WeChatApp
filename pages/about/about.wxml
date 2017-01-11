@@ -1,0 +1,14 @@
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text class="motto">{{text}}</text>
+  </view>
+  <view class="section">
+    <input maxlength="10" placeholder="最大输入长度10" />
+  </view>
+  <view class="section">
+  <view class="section__title">你输入的是：{{inputValue}}</view>
+  <input id="test" bindinput="bindKeyInput" maxlength="11" placeholder="输入同步到view" />
+</view>
+</view>

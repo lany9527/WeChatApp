@@ -1,0 +1,11 @@
+
+<!-- 默认模版 -->
+<template name="input-smart">
+  <text class="member-title">{{target.text}}</text>
+  <text class="member-box">{{target.value}}</text>
+  <view class="member-flex">
+    <button data-bind-value="{{target.name}}" bindtap="inputSmartValueAdd">+</button>
+    <button data-bind-value="{{target.name}}" bindtap="inputSmartValueSub">-</button>
+  </view>
+</template>
+<!-- 人物选择 -->
