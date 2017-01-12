@@ -1,9 +1,11 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/about/about",
     "pages/reading/reading",
-    "pages/logs/logs"
+    "pages/reading/essay/essay",
+    "pages/reading/serial/serial",
+    "pages/reading/question/question",
+    "pages/movie/movie"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -26,16 +28,10 @@
         "selectedIconPath": "images/reading-selected.png"
       },
       {
-        "pagePath": "pages/about/about",
-        "text": "我",
-        "iconPath": "images/about.png",
-        "selectedIconPath": "images/about-selected.png"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志",
-        "iconPath": "images/log.png",
-        "selectedIconPath": "images/log-selected.png"
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "images/movie.png",
+        "selectedIconPath": "images/movie_active.png"
       }
     ],
     "color": "#515151",

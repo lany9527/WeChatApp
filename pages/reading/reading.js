@@ -40,4 +40,24 @@ Page({
   // onUnload:function(){
   //   // 页面关闭
   // }
+
+  // 点击跳转
+  tapEssay: function (e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: 'essay/essay?id=' + id
+    })
+  },
+  tapSerial: function (e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: 'serial/serial?id=' + id
+    })
+  },
+  tapQuestion: function (e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: 'question/question?id=' + id
+    })
+  }
 })

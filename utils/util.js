@@ -1,21 +1,46 @@
-function formatTime(date) {
-  var year = date.getFullYear()
-  var month = date.getMonth() + 1
-  var day = date.getDate()
+import {
+  VOL_AND_READING_BEGIN_TIME,
+  OTHER_BEGIN_TIME,
+  MONTH_MAP
+} from './constants.js'
 
-  var hour = date.getHours()
-  var minute = date.getMinutes()
-  var second = date.getSeconds()
+const filterContent = (string) => string.replace(/[\r\n]/g, "").replace(/<.*?>/g, "\n")
 
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+const formatMakettime = (dateString) => {
+   return (new Date(dateString)).toString().split(' ', 4).slice(1, 4).join(' ')  
 }
 
-function formatNumber(n) {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+const getBeginTime = (type) => {
+  let isOther = type !== 'reading' && type !== 'essay' && type !== 'index'
+  let beginTime = isOther ? OTHER_BEGIN_TIME : VOL_AND_READING_BEGIN_TIME
+  return new Date(beginTime)
+}
+
+const getDateList = (type) => {
+  let begin = getBeginTime(type)
+  let beginYear = begin.getFullYear()
+  let beginMonth = begin.getMonth()
+
+  let now = new Date()
+  let nowYear = now.getFullYear()
+  let nowMonth = now.getMonth()
+
+  let dateList = [];
+  for (let y = nowYear; y >= beginYear; y--) {
+    for(let m = 11; m >= 0; m--) {
+      dateList.push({
+        title: MONTH_MAP[m] + y,
+        value: y + '-' + (m + 1)
+      })
+    }
+  }
+  
+  dateList = dateList.slice(11 - nowMonth, dateList.length - beginMonth)
+  return dateList
 }
 
 module.exports = {
-  formatTime: formatTime
+  getDateList,
+  filterContent,
+  formatMakettime
 }

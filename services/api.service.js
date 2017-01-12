@@ -29,12 +29,22 @@ const getVolById = (params) => wxRequest(params, host + '/api/hp/detail/' + para
 const getVolIdList = (params) => wxRequest(params, host + '/api/hp/idlist/0');
 
 // reading
-const getCarousel = (params) => wxRequest(params, host + '/api/reading/carousel')
-const getLastArticles = (params) => wxRequest(params, host + '/api/reading/index')
+const getCarousel = (params) => wxRequest(params, host + '/api/reading/carousel');
+const getLastArticles = (params) => wxRequest(params, host + '/api/reading/index');
+const getEssayById = (params) => wxRequest(params, host + '/api/essay/' + params.query.id);
+const getSerialById = (params) => wxRequest(params, host + '/api/serialcontent/' + params.query.id);
+const getQuestionById = (params) => wxRequest(params, host + '/api/question/' + params.query.id);
+
+// movie
+const getMovieListById = (params) => wxRequest(params, host + '/api/movie/list/' + params.query.id)
 
 module.exports = {
     getVolById,
     getVolIdList,
     getCarousel,
-    getLastArticles
+    getLastArticles,
+    getEssayById,
+    getSerialById,
+    getQuestionById,
+    getMovieListById
 }
